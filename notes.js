@@ -399,3 +399,204 @@ window.NOTES = [
     ]
   }
 ];
+
+// 互動測驗：依 AGENTS.md quiz 格式編寫，舊筆記與原有 review 問題保留。
+const NOTE_QUIZZES = {
+  "dna-replication": [
+    {
+      "question": "DNA polymerase 在複製時，新的 DNA 鏈主要朝哪個方向延伸？",
+      "options": [
+        "3′ → 5′",
+        "5′ → 3′",
+        "兩個方向都可以"
+      ],
+      "answerIndex": 1,
+      "explanation": "DNA polymerase 將核苷酸接到延伸股的 3′-OH，因此新股只能沿 5′ → 3′ 方向合成。"
+    },
+    {
+      "question": "後隨股需要分段合成的主要原因是什麼？",
+      "options": [
+        "DNA polymerase 只能 5′ → 3′ 合成，但兩條模板方向相反",
+        "後隨股完全不需要引子",
+        "Helicase 只能打開一條 DNA 鏈"
+      ],
+      "answerIndex": 0,
+      "explanation": "兩條模板反向平行；相對複製叉前進方向，後隨股必須產生多段岡崎片段，最後再連接。"
+    }
+  ],
+  "population-growth": [
+    {
+      "question": "在 r 和 K 固定且 N=K 的邏輯斯模型中，dN/dt 等於多少？",
+      "options": [
+        "rK",
+        "0",
+        "−rK"
+      ],
+      "answerIndex": 1,
+      "explanation": "dN/dt = rN(1 − N/K)。當 N=K，括號為零，淨成長率為零。"
+    },
+    {
+      "question": "指數成長模型長期可能不合理，主要是因為什麼假設？",
+      "options": [
+        "假設資源限制不會隨族群增長而提高",
+        "族群永遠沒有出生",
+        "族群只會減少"
+      ],
+      "answerIndex": 0,
+      "explanation": "dN/dt = rN 假設每個個體的平均淨成長率固定，沒有承載量限制。"
+    }
+  ],
+  "learning-methods": [
+    {
+      "question": "下列何者最符合主動回憶（active recall）？",
+      "options": [
+        "反覆看相同段落",
+        "不看筆記先試著回答問題",
+        "只替重要句子畫螢光筆"
+      ],
+      "answerIndex": 1,
+      "explanation": "主動回憶要求從記憶中提取答案，更容易發現尚未熟悉的概念。"
+    },
+    {
+      "question": "間隔複習的核心概念是什麼？",
+      "options": [
+        "把所有複習集中在一個晚上",
+        "將回憶練習分散到不同時間",
+        "只複習自己已經會的部分"
+      ],
+      "answerIndex": 1,
+      "explanation": "間隔複習將複習分散進行，可依難度與回憶表現調整，不是固定間隔才有效。"
+    }
+  ],
+  "sexual-selection-mechanisms": [
+    {
+      "question": "兩隻雄鹿爭奪交配機會，最直接對應哪一類性擇？",
+      "options": [
+        "異性間選擇（intersexual selection）",
+        "同性間競爭（intrasexual selection）",
+        "親代投資（parental investment）"
+      ],
+      "answerIndex": 1,
+      "explanation": "課程以雄鹿的接近、評估與競爭說明同性間競爭；性擇並非只能由雄性競爭、雌性選擇構成。"
+    },
+    {
+      "question": "雌性因雄性提供食物或育幼照顧而偏好牠，這最符合哪種利益？",
+      "options": [
+        "直接利益（direct benefits）",
+        "性感兒子假說（sexy son）",
+        "感官偏差（sensory bias）"
+      ],
+      "answerIndex": 0,
+      "explanation": "食物或育幼照顧是配對當下可取得的資源，屬直接利益；後代遺傳上的優勢才屬間接利益。"
+    },
+    {
+      "question": "蜥蜴的雄雄競爭與雄性偏大體型關聯較弱，最合理的解讀為何？",
+      "options": [
+        "證明競爭沒有任何作用",
+        "性體型二型可能同時受其他演化機制影響",
+        "所有蜥蜴雄性體型都更小"
+      ],
+      "answerIndex": 1,
+      "explanation": "講義指出控制親緣關係後，競爭對體型差異的解釋力偏弱；弱相關不表示機制必然不存在。"
+    }
+  ],
+  "sexual-conflict-bateman": [
+    {
+      "question": "Bateman gradient 比較哪兩個量？",
+      "options": [
+        "存活年齡與體重",
+        "交配伴侶數與後代數",
+        "卵大小與體溫"
+      ],
+      "answerIndex": 1,
+      "explanation": "橫向概念為 mating success（交配成功／伴侶數），縱向為 reproductive success（繁殖成功／後代數）；斜率表示增加伴侶時繁殖成功的變化。"
+    },
+    {
+      "question": "關於 Bateman 原則，下列何者較符合課程的討論？",
+      "options": [
+        "所有物種都完全符合經典雌雄模式",
+        "是可提出預測、也需要檢驗與修正的觀點",
+        "雌性多次交配永遠沒有利益"
+      ],
+      "answerIndex": 1,
+      "explanation": "課程先介紹異配生殖與經典預測，再檢視 Bateman 原則面臨的挑戰，不能把典型模式當普遍定律。"
+    },
+    {
+      "question": "若雌雄對交配次數的最佳利益不同，最直接涉及什麼問題？",
+      "options": [
+        "性衝突（sexual conflict）",
+        "限制酶活性",
+        "族群承載量"
+      ],
+      "answerIndex": 0,
+      "explanation": "性衝突指雌雄繁殖利益可能不一致；不同性別的最適策略不必相同。"
+    }
+  ],
+  "restriction-enzyme-cloning": [
+    {
+      "question": "進行方向性 DNA 選殖時，為什麼常在片段兩端使用兩種不同限制酶？",
+      "options": [
+        "使兩端更容易以單一方向接合並減少載體自我連接",
+        "讓 DNA polymerase 反向合成",
+        "使 DNA 不需連接酶"
+      ],
+      "answerIndex": 0,
+      "explanation": "兩端採不同且合適的限制酶切位點能提高插入方向的控制力；仍須檢查酶切末端相容性。"
+    },
+    {
+      "question": "下列何者最可能導致 restriction enzyme 的 star activity？",
+      "options": [
+        "使用正確的最適緩衝條件",
+        "過高的甘油濃度或過長反應時間",
+        "選擇不含 DNA 的反應管"
+      ],
+      "answerIndex": 1,
+      "explanation": "講義列出高甘油比例、高酶量、低離子強度及過長反應時間等偏離最佳條件的因素。"
+    },
+    {
+      "question": "pUC19 中 ampR 的主要用途是什麼？",
+      "options": [
+        "用抗生素篩選帶有質體的細菌",
+        "在細菌內使 DNA 自動螢光",
+        "提供所有限制酶的識別序列"
+      ],
+      "answerIndex": 0,
+      "explanation": "ampR 提供抗 ampicillin 的選擇能力，與 lacZ 插入失活的篩選功能不同。"
+    }
+  ],
+  "pcr-yeast-gene-modification": [
+    {
+      "question": "PCR-based yeast gene modification 的引子 5′ 端常加入目標基因座同源序列，主要用途是？",
+      "options": [
+        "引導 PCR 片段在酵母中以同源重組整合到指定位置",
+        "讓所有質體都變成 RNA",
+        "直接取代 DNA polymerase"
+      ],
+      "answerIndex": 0,
+      "explanation": "Longtine 等人的策略利用引子 5′ 端帶入基因座同源序列，擴增後的 DNA 片段可透過酵母同源重組進行指定改造。"
+    },
+    {
+      "question": "酵母轉形後有菌落生長，能否直接證明目標位置已正確改造？",
+      "options": [
+        "可以，任何生長都代表正確整合",
+        "不可以，仍需基因型或其他驗證",
+        "不必，所有 DNA 都會自動整合到同一位置"
+      ],
+      "answerIndex": 1,
+      "explanation": "轉形或選殖後的存活，不能單獨證明基因組的目標位置與結構正確；需另外驗證。"
+    },
+    {
+      "question": "Longtine 等人提出通用 PCR 模組的主要優勢是什麼？",
+      "options": [
+        "可使用少量通用模板與引子策略進行多種基因操作",
+        "完全不需要 PCR",
+        "只能用於單一基因"
+      ],
+      "answerIndex": 0,
+      "explanation": "論文說明這些模組可用於刪除、標記及其他改造，減少每次都需要建立專屬質體的負擔。"
+    }
+  ]
+};
+for (const note of window.NOTES) {
+  if (NOTE_QUIZZES[note.id]) note.quiz = NOTE_QUIZZES[note.id];
+}
