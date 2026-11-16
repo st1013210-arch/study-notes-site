@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f5f1" />
+  <meta name="description" content="把零散的課堂筆記整理成可搜尋、可複習、可持續擴充的個人知識網站。" />
+  <title>Noteshelf｜我的學習筆記</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="notes.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">跳至主要內容</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="側邊導覽">
+      <a class="brand" href="#/" aria-label="Noteshelf 首頁"><span class="brand-icon">N.</span><span>NOTESHELF<small>PERSONAL STUDY SPACE</small></span></a>
+      <div class="side-section">瀏覽筆記</div>
+      <nav id="category-nav" class="category-nav" aria-label="筆記分類"></nav>
+      <div class="side-bottom"><span class="dot"></span> A little learning, every day.<br><small>Made for continued learning</small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="crumb" id="breadcrumb">My workspace <span>/</span> 全部筆記</div><a class="github-link" href="https://github.com/" target="_blank" rel="noopener noreferrer" title="可自行換成自己的 GitHub Repository 連結">GitHub ↗</a></header>
+      <main id="main" tabindex="-1"><div id="app"></div></main>
+      <footer class="footer">Noteshelf · 以清楚的規則，持續累積知識。<span>© <span id="year"></span></span></footer>
+    </div>
+  </div>
+</body>
+</html>
